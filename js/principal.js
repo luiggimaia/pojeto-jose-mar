@@ -53,4 +53,4 @@ areaLista.addEventListener("click", (evento) => {
   }
 });
 
-atualizarTela();
+iniciarApp();

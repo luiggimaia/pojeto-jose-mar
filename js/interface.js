@@ -134,5 +134,6 @@ function renderizarLista() {
 
 function atualizarTela() {
   renderizarResumo();
+  renderizarAlertas();
   renderizarLista();
 }

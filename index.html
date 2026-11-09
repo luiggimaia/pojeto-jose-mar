@@ -7,12 +7,60 @@
 <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-<header class="topo">
+
+<section id="telaLogin" class="tela-login">
+<div class="login-marca">
 <h1>FashionTrends</h1>
-<p>Gestão de produtos</p>
-</header>
-<main>
-<section class="resumo" id="resumo"></section>
+<p>Controle o catálogo e o estoque da sua loja de moda em um só lugar.</p>
+</div>
+<div class="login-formulario">
+<form id="formularioLogin" class="login-caixa" novalidate>
+<h2>Entrar</h2>
+<label>Usuário
+<input type="text" id="campoUsuario" autocomplete="username">
+</label>
+<label>Senha
+<input type="password" id="campoSenha" autocomplete="current-password">
+</label>
+<span class="erro" id="erroLogin"></span>
+<button type="submit">Entrar</button>
+<p class="dica">Acesso de demonstração: admin / fashion123</p>
+</form>
+</div>
+</section>
+
+<div id="telaApp" class="app" hidden>
+<aside class="menu">
+<div class="menu-marca">FashionTrends</div>
+<nav class="menu-nav">
+<a class="menu-link" href="#inicio" data-pagina="inicio">Início</a>
+<a class="menu-link" href="#produtos" data-pagina="produtos">Produtos</a>
+</nav>
+<div class="menu-rodape">
+<span id="nomeUsuario"></span>
+<button type="button" id="botaoSair">Sair</button>
+</div>
+</aside>
+
+<main class="conteudo">
+<section class="pagina" data-pagina="inicio">
+<div class="cabecalho-pagina">
+<h1 id="saudacao">Olá</h1>
+<p>Resumo da loja neste momento.</p>
+</div>
+<div class="resumo" id="resumo"></div>
+<div class="painel painel-estreito">
+<h2>Produtos com estoque baixo</h2>
+<div id="alertas"></div>
+<a class="atalho" href="#produtos">Gerenciar produtos</a>
+</div>
+</section>
+
+<section class="pagina" data-pagina="produtos" hidden>
+<div class="cabecalho-pagina">
+<h1>Produtos</h1>
+<p>Cadastre, edite e acompanhe o estoque do catálogo.</p>
+</div>
 <div class="area">
 <section class="painel">
 <h2 id="tituloFormulario">Novo produto</h2>
@@ -89,10 +137,16 @@
 <div id="lista" class="lista"></div>
 </section>
 </div>
+</section>
 </main>
+</div>
+
 <script src="js/armazenamento.js"></script>
 <script src="js/produtos.js"></script>
+<script src="js/autenticacao.js"></script>
 <script src="js/interface.js"></script>
+<script src="js/inicio.js"></script>
+<script src="js/navegacao.js"></script>
 <script src="js/principal.js"></script>
 </body>
 </html>

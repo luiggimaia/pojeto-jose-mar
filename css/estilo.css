@@ -16,23 +16,6 @@ body {
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   line-height: 1.5;
 }
-.topo {
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-  padding: 20px 32px;
-  background: var(--destaque);
-  color: #fff;
-}
-.topo h1 {
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-.topo p { margin: 0; opacity: 0.8; }
-main { max-width: 1200px; margin: 0 auto; padding: 24px 20px 48px; }
 .resumo {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -62,7 +45,7 @@ main { max-width: 1200px; margin: 0 auto; padding: 24px 20px 48px; }
 }
 .painel h2 { margin: 0 0 16px; font-family: Georgia, serif; font-size: 1.3rem; }
 label { display: block; margin-bottom: 12px; font-size: 0.9rem; font-weight: 600; }
-input[type="text"], input[type="number"], input[type="search"], select, textarea {
+input[type="text"], input[type="number"], input[type="search"], input[type="password"], select, textarea {
   display: block;
   width: 100%;
   margin-top: 4px;
@@ -125,4 +108,49 @@ button.perigo:hover { background: #fbeae9; }
 @media (max-width: 900px) {
   .area { grid-template-columns: 1fr; }
   .filtros { grid-template-columns: 1fr; }
+}
+
+[hidden] { display: none !important; }
+.tela-login { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
+.login-marca { display: flex; flex-direction: column; justify-content: flex-end; padding: 56px; background: var(--destaque); color: #fff; }
+.login-marca h1 { margin: 0 0 8px; font-family: Georgia, "Times New Roman", serif; font-size: 3rem; }
+.login-marca p { max-width: 320px; margin: 0; opacity: 0.85; }
+.login-formulario { display: flex; align-items: center; justify-content: center; padding: 32px; }
+.login-caixa { width: 100%; max-width: 360px; }
+.login-caixa h2 { margin: 0 0 20px; font-family: Georgia, serif; font-size: 1.6rem; }
+.login-caixa .erro { margin-bottom: 10px; }
+.dica { margin: 16px 0 0; color: var(--tinta-suave); font-size: 0.85rem; }
+.app { min-height: 100vh; display: grid; grid-template-columns: 240px 1fr; }
+.menu { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; padding: 24px 16px; background: var(--destaque-escuro); color: #fff; }
+.menu-marca { padding: 0 8px 24px; font-family: Georgia, serif; font-size: 1.5rem; font-weight: 700; }
+.menu-nav { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.menu-link { padding: 10px 12px; border-left: 3px solid transparent; border-radius: 4px; color: #e9d8e2; text-decoration: none; }
+.menu-link:hover { background: rgba(255, 255, 255, 0.08); }
+.menu-link.ativo { border-left-color: #fff; background: rgba(255, 255, 255, 0.14); color: #fff; font-weight: 600; }
+.menu a:focus-visible, .menu button:focus-visible { outline-color: #fff; }
+.menu-rodape { display: flex; flex-direction: column; gap: 10px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.2); }
+.menu-rodape span { font-size: 0.9rem; }
+.menu-rodape button { border-color: rgba(255, 255, 255, 0.5); background: transparent; }
+.menu-rodape button:hover { background: rgba(255, 255, 255, 0.12); }
+.conteudo { width: 100%; max-width: 1240px; padding: 28px 32px 48px; }
+.cabecalho-pagina { margin-bottom: 24px; }
+.cabecalho-pagina h1 { margin: 0; font-family: Georgia, serif; font-size: 1.8rem; }
+.cabecalho-pagina p { margin: 4px 0 0; color: var(--tinta-suave); }
+.painel-estreito { max-width: 560px; }
+.alertas { margin: 0; padding: 0; list-style: none; }
+.alerta-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--linha); }
+.alerta-item:last-child { border-bottom: 0; }
+.alerta-item strong { color: var(--alerta); }
+.painel-estreito .vazio { padding: 16px; }
+.atalho { display: inline-block; margin-top: 16px; padding: 9px 16px; border: 1px solid var(--destaque); border-radius: 4px; color: var(--destaque); font-weight: 600; text-decoration: none; }
+.atalho:hover { background: #f1e7ee; }
+@media (max-width: 900px) {
+  .tela-login { grid-template-columns: 1fr; }
+  .login-marca { min-height: 160px; padding: 32px; }
+  .app { grid-template-columns: 1fr; }
+  .menu { position: static; height: auto; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 12px; padding: 12px 16px; }
+  .menu-marca { padding: 0; font-size: 1.2rem; }
+  .menu-nav { flex-direction: row; }
+  .menu-rodape { flex-direction: row; align-items: center; padding: 0; border: 0; }
+  .conteudo { padding: 20px 16px 40px; }
 }
