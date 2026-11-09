@@ -1,13 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" a href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FashionTrends | Gestão de produtos</title>
+<link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-    
+<header class="topo">
+<h1>FashionTrends</h1>
+<p>Gestão de produtos</p>
+</header>
+<main>
+<section class="resumo" id="resumo"></section>
+<div class="area">
+<section class="painel">
+<h2 id="tituloFormulario">Novo produto</h2>
+<form id="formulario" novalidate>
+<input type="hidden" id="campoId">
+<label>Nome
+<input type="text" id="campoNome">
+<span class="erro" data-erro="nome"></span>
+</label>
+<label>Descrição
+<textarea id="campoDescricao" rows="3"></textarea>
+</label>
+<div class="linha">
+<label>Categoria
+<select id="campoCategoria">
+<option value="">Selecione</option>
+<option value="Camisetas">Camisetas</option>
+<option value="Calças">Calças</option>
+<option value="Vestidos">Vestidos</option>
+<option value="Acessórios">Acessórios</option>
+</select>
+<span class="erro" data-erro="categoria"></span>
+</label>
+<label>Cor
+<input type="text" id="campoCor">
+</label>
+</div>
+<div class="linha">
+<label>Preço (R$)
+<input type="number" id="campoPreco" step="0.01" min="0">
+<span class="erro" data-erro="preco"></span>
+</label>
+<label>Estoque
+<input type="number" id="campoEstoque" step="1" min="0">
+<span class="erro" data-erro="estoque"></span>
+</label>
+</div>
+<fieldset>
+<legend>Tamanhos</legend>
+<label class="opcao"><input type="checkbox" name="tamanho" value="P">P</label>
+<label class="opcao"><input type="checkbox" name="tamanho" value="M">M</label>
+<label class="opcao"><input type="checkbox" name="tamanho" value="G">G</label>
+<label class="opcao"><input type="checkbox" name="tamanho" value="GG">GG</label>
+<span class="erro" data-erro="tamanhos"></span>
+</fieldset>
+<label>Link da imagem
+<input type="text" id="campoImagem" placeholder="https://...">
+<span class="erro" data-erro="imagem"></span>
+</label>
+<label class="opcao"><input type="checkbox" id="campoAtivo" checked>Produto ativo na loja</label>
+<div class="botoes">
+<button type="submit" id="botaoSalvar">Salvar produto</button>
+<button type="button" id="botaoCancelar" class="secundario" hidden>Cancelar edição</button>
+</div>
+</form>
+</section>
+<section class="catalogo">
+<div class="filtros">
+<input type="search" id="campoBusca" placeholder="Buscar por nome">
+<select id="filtroCategoria">
+<option value="todas">Todas as categorias</option>
+<option value="Camisetas">Camisetas</option>
+<option value="Calças">Calças</option>
+<option value="Vestidos">Vestidos</option>
+<option value="Acessórios">Acessórios</option>
+</select>
+<select id="filtroOrdem">
+<option value="recentes">Ordem de cadastro</option>
+<option value="nome">Nome (A-Z)</option>
+<option value="menor-preco">Menor preço</option>
+<option value="maior-preco">Maior preço</option>
+</select>
+</div>
+<div id="lista" class="lista"></div>
+</section>
+</div>
+</main>
+<script src="js/armazenamento.js"></script>
+<script src="js/produtos.js"></script>
+<script src="js/interface.js"></script>
+<script src="js/principal.js"></script>
 </body>
 </html>
-
